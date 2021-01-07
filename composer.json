@@ -1,6 +1,6 @@
 {
   "name": "factorio-item-browser/combination-api-client",
-  "description": "A PHP client library to access the Combination API.",
+  "description": "A PHP client library to access the Combination API of the Factorio Item Browser.",
   "homepage": "https://github.com/factorio-item-browser/combination-api-client",
   "type": "library",
   "keywords": ["Factorio Item Browser", "FIB", "combination", "api", "client"],

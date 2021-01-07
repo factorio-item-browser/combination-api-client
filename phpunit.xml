@@ -9,6 +9,9 @@
         </include>
     </coverage>
     <testsuites>
+        <testsuite name="serializer-test">
+            <directory>test/serializer</directory>
+        </testsuite>
         <testsuite name="unit-test">
             <directory>test/src</directory>
         </testsuite>

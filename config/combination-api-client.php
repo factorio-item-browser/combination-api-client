@@ -6,6 +6,7 @@
  * @author BluePsyduck <bluepsyduck@gmx.com>
  * @license http://opensource.org/licenses/GPL-3.0 GPL v3
  */
+// phpcs:ignoreFile
 
 declare(strict_types=1);
 
@@ -22,7 +23,7 @@ return [
         ],
         ConfigKey::SERIALIZER => [
             JmsConfigKey::METADATA_DIRS => [
-                __NAMESPACE__ => __DIR__ . '/serializer',
+                __NAMESPACE__ => __DIR__ . '/serializer', // 'vendor/factorio-item-browser/combination-api-client/config/serializer',
             ],
             JmsConfigKey::PROPERTY_NAMING_STRATEGY => IdenticalPropertyNamingStrategy::class,
         ],
