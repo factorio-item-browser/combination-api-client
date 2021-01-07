@@ -22,7 +22,9 @@ return [
     'dependencies' => [
         'factories' => [
             ClientInterface::class => ClientFactory::class,
+
             Endpoint\StatusEndpoint::class => AutoWireFactory::class,
+            Endpoint\ValidateEndpoint::class => AutoWireFactory::class,
 
             // 3rd-party dependencies
             IdenticalPropertyNamingStrategy::class => AutoWireFactory::class,

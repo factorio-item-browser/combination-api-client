@@ -20,6 +20,7 @@ return [
     ConfigKey::PROJECT => [
         ConfigKey::ENDPOINTS => [
             Endpoint\StatusEndpoint::class,
+            Endpoint\ValidateEndpoint::class,
         ],
         ConfigKey::SERIALIZER => [
             JmsConfigKey::METADATA_DIRS => [

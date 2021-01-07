@@ -1,0 +1,7 @@
+FactorioItemBrowser\CombinationApi\Client\Transfer\ValidationProblem:
+  exclusion_policy: all
+  properties:
+    type:
+      type: string
+    dependency:
+      type: string
