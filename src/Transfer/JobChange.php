@@ -17,10 +17,10 @@ use FactorioItemBrowser\CombinationApi\Client\Constant\JobStatus;
 class JobChange
 {
     /**
-     * The agent which triggered the change.
+     * The initiator of the change.
      * @var string
      */
-    public string $agent = '';
+    public string $initiator = '';
 
     /**
      * The timestamp of when the change happened.

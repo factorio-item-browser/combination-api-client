@@ -1,0 +1,11 @@
+FactorioItemBrowser\CombinationApi\Client\Response\Combination\StatusResponse:
+  exclusion_policy: all
+  properties:
+    id:
+      type: string
+    shortId:
+      type: string
+    modNames:
+      type: array<string>
+    isDataAvailable:
+      type: boolean

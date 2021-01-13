@@ -1,0 +1,12 @@
+FactorioItemBrowser\CombinationApi\Client\Transfer\Job:
+  exclusion_policy: all
+  properties:
+    id:
+      type: string
+    combinationId:
+      type: string
+    status:
+      type: string
+    errorMessage:
+      type: string
+    changes: array<FactorioItemBrowser\CombinationApi\Client\Transfer\JobChange>

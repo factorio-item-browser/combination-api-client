@@ -1,0 +1,2 @@
+FactorioItemBrowser\CombinationApi\Client\Request\Job\ListRequest:
+  exclusion_policy: all

@@ -16,13 +16,13 @@ class ValidatedMod
      * The name of the mod.
      * @var string
      */
-    public string $name;
+    public string $name = '';
 
     /**
      * The version of the mod used for validation.
      * @var string
      */
-    public string $version;
+    public string $version = '';
 
     /**
      * The problems encountered with the mod.

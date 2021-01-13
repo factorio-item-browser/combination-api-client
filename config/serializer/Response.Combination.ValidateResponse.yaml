@@ -1,0 +1,7 @@
+FactorioItemBrowser\CombinationApi\Client\Response\Combination\ValidateResponse:
+  exclusion_policy: all
+  properties:
+    isValid:
+      type: bool
+    mods:
+      type: array<FactorioItemBrowser\CombinationApi\Client\Transfer\ValidatedMod>

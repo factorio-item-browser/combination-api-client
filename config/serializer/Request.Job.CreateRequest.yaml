@@ -1,0 +1,7 @@
+FactorioItemBrowser\CombinationApi\Client\Request\Job\CreateRequest:
+  exclusion_policy: all
+  properties:
+    combinationId:
+      type: string
+    priority:
+      type: string

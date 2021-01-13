@@ -12,7 +12,6 @@ use FactorioItemBrowserTestSerializer\CombinationApi\Client\SerializerTestCase;
  *
  * @author BluePsyduck <bluepsyduck@gmx.com>
  * @license http://opensource.org/licenses/GPL-3.0 GPL v3
- * @coversDefaultClass \FactorioItemBrowser\CombinationApi\Client\Transfer\ValidationProblem
  */
 class ValidationProblemTest extends SerializerTestCase
 {

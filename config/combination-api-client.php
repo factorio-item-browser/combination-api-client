@@ -19,8 +19,12 @@ use JMS\Serializer\Naming\IdenticalPropertyNamingStrategy;
 return [
     ConfigKey::PROJECT => [
         ConfigKey::ENDPOINTS => [
-            Endpoint\StatusEndpoint::class,
-            Endpoint\ValidateEndpoint::class,
+            Endpoint\Combination\StatusEndpoint::class,
+            Endpoint\Combination\ValidateEndpoint::class,
+            Endpoint\Job\CreateEndpoint::class,
+            Endpoint\Job\DetailsEndpoint::class,
+            Endpoint\Job\ListEndpoint::class,
+            Endpoint\Job\UpdateEndpoint::class,
         ],
         ConfigKey::SERIALIZER => [
             JmsConfigKey::METADATA_DIRS => [

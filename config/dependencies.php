@@ -23,13 +23,17 @@ return [
         'factories' => [
             ClientInterface::class => ClientFactory::class,
 
-            Endpoint\StatusEndpoint::class => AutoWireFactory::class,
-            Endpoint\ValidateEndpoint::class => AutoWireFactory::class,
+            Endpoint\Combination\StatusEndpoint::class => AutoWireFactory::class,
+            Endpoint\Combination\ValidateEndpoint::class => AutoWireFactory::class,
+            Endpoint\Job\CreateEndpoint::class => AutoWireFactory::class,
+            Endpoint\Job\DetailsEndpoint::class => AutoWireFactory::class,
+            Endpoint\Job\ListEndpoint::class => AutoWireFactory::class,
+            Endpoint\Job\UpdateEndpoint::class => AutoWireFactory::class,
 
             // 3rd-party dependencies
             IdenticalPropertyNamingStrategy::class => AutoWireFactory::class,
 
-            SerializerInterface::class . '$combinationApiClientSerializer' => new JmsSerializerFactory(ConfigKey::PROJECT, ConfigKey::SERIALIZER),
+            SerializerInterface::class . ' $combinationApiClientSerializer' => new JmsSerializerFactory(ConfigKey::PROJECT, ConfigKey::SERIALIZER),
         ],
     ],
 ];

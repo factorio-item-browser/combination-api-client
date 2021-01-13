@@ -1,0 +1,5 @@
+FactorioItemBrowser\CombinationApi\Client\Response\Job\ListResponse:
+  exclusion_policy: all
+  properties:
+    jobs:
+      type: array<FactorioItemBrowser\CombinationApi\Client\Transfer\Job>

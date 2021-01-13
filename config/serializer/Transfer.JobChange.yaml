@@ -1,0 +1,9 @@
+FactorioItemBrowser\CombinationApi\Client\Transfer\JobChange:
+  exclusion_policy: all
+  properties:
+    initiator:
+      type: string
+    status:
+      type: string
+    timestamp:
+      type: DateTimeImmutable<'c'>
