@@ -29,7 +29,7 @@ class ClientFactoryTest extends TestCase
     public function testInvoke(): void
     {
         $config = [
-            ConfigKey::PROJECT => [
+            ConfigKey::MAIN => [
                 ConfigKey::BASE_URI => 'https://www.example.com/',
                 ConfigKey::TIMEOUT => 42,
                 ConfigKey::ENDPOINTS => [

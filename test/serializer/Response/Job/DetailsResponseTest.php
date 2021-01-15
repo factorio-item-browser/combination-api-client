@@ -32,15 +32,19 @@ class DetailsResponseTest extends SerializerTestCase
         $object = new DetailsResponse();
         $object->id = 'mno';
         $object->combinationId = 'pqr';
-        $object->status = 'stu';
-        $object->errorMessage = 'vwx';
+        $object->priority = 'stu';
+        $object->status = 'vwx';
+        $object->errorMessage = 'yza';
+        $object->creationTime = new DateTimeImmutable('2038-01-19 01:14:07+00:00');
         $object->changes = [$change1, $change2];
 
         $data = [
             'id' => 'mno',
             'combinationId' => 'pqr',
-            'status' => 'stu',
-            'errorMessage' => 'vwx',
+            'priority' => 'stu',
+            'status' => 'vwx',
+            'errorMessage' => 'yza',
+            'creationTime' => '2038-01-19T01:14:07+00:00',
             'changes' => [
                 [
                     'initiator' => 'abc',

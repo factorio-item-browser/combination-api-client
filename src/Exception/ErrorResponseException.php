@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace FactorioItemBrowser\CombinationApi\Client\Exception;
 
-use Exception;
+use Throwable;
 
 /**
  * The exception thrown when the response had an erroneous status code.
@@ -21,7 +21,7 @@ class ErrorResponseException extends ClientException
         int $statusCode,
         string $request,
         string $response,
-        ?Exception $previous = null
+        ?Throwable $previous = null
     ) {
         parent::__construct(sprintf(self::MESSAGE, $statusCode, $message), $statusCode, $request, $response, $previous);
     }

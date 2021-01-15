@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace FactorioItemBrowser\CombinationApi\Client\Response\Combination;
 
+use DateTimeInterface;
+
 /**
  * The response containing the status of a combination.
  *
@@ -35,4 +37,10 @@ class StatusResponse
      * @var bool
      */
     public bool $isDataAvailable = false;
+
+    /**
+     * The time when the combination was last exported.
+     * @var DateTimeInterface|null
+     */
+    public ?DateTimeInterface $exportTime = null;
 }

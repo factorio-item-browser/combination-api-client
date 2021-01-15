@@ -4,7 +4,8 @@ declare(strict_types=1);
 
 namespace FactorioItemBrowser\CombinationApi\Client\Transfer;
 
-use FactorioItemBrowser\CombinationApi\Client\Constant\JobStatus;
+use DateTimeImmutable;
+use DateTimeInterface;
 
 /**
  * The class representing an export job.
@@ -27,10 +28,16 @@ class Job
     public string $combinationId = '';
 
     /**
+     * The priority of the export job.
+     * @var string
+     */
+    public string $priority = '';
+
+    /**
      * The current status of the job.
      * @var string
      */
-    public string $status = JobStatus::QUEUED;
+    public string $status = '';
 
     /**
      * The error message in case the job failed.
@@ -39,8 +46,19 @@ class Job
     public string $errorMessage = '';
 
     /**
+     * The creation time of the export job.
+     * @var DateTimeInterface
+     */
+    public DateTimeInterface $creationTime;
+
+    /**
      * The changes of the job.
      * @var array<JobChange>
      */
     public array $changes = [];
+
+    public function __construct()
+    {
+        $this->creationTime = new DateTimeImmutable();
+    }
 }

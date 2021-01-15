@@ -6,7 +6,6 @@ namespace FactorioItemBrowser\CombinationApi\Client\Transfer;
 
 use DateTimeImmutable;
 use DateTimeInterface;
-use FactorioItemBrowser\CombinationApi\Client\Constant\JobStatus;
 
 /**
  * The class representing a change of a job.
@@ -32,7 +31,7 @@ class JobChange
      * The new status of the job.
      * @var string
      */
-    public string $status = JobStatus::QUEUED;
+    public string $status = '';
 
     public function __construct()
     {

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace FactorioItemBrowser\CombinationApi\Client\Exception;
 
-use Exception;
+use Throwable;
 
 /**
  * The exception thrown when an unhandled request was encountered.
@@ -16,7 +16,7 @@ class UnhandledRequestException extends ClientException
 {
     private const MESSAGE = 'The request %s is handled by any endpoint.';
 
-    public function __construct(string $requestClass, ?Exception $previous = null)
+    public function __construct(string $requestClass, ?Throwable $previous = null)
     {
         parent::__construct(sprintf(self::MESSAGE, $requestClass), 0, '', '', $previous);
     }

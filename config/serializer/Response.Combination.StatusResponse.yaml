@@ -9,3 +9,5 @@ FactorioItemBrowser\CombinationApi\Client\Response\Combination\StatusResponse:
       type: array<string>
     isDataAvailable:
       type: boolean
+    exportTime:
+      type: DateTimeImmutable<'c'>

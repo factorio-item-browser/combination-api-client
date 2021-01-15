@@ -17,7 +17,7 @@ use FactorioItemBrowser\CombinationApi\Client\Constant\ConfigKey;
 use JMS\Serializer\Naming\IdenticalPropertyNamingStrategy;
 
 return [
-    ConfigKey::PROJECT => [
+    ConfigKey::MAIN => [
         ConfigKey::ENDPOINTS => [
             Endpoint\Combination\StatusEndpoint::class,
             Endpoint\Combination\ValidateEndpoint::class,

@@ -7,6 +7,11 @@ FactorioItemBrowser\CombinationApi\Client\Transfer\Job:
       type: string
     status:
       type: string
+    priority:
+      type: string
     errorMessage:
       type: string
-    changes: array<FactorioItemBrowser\CombinationApi\Client\Transfer\JobChange>
+    creationTime:
+      type: DateTimeImmutable<'c'>
+    changes:
+      type: array<FactorioItemBrowser\CombinationApi\Client\Transfer\JobChange>

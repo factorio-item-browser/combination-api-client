@@ -33,7 +33,7 @@ return [
             // 3rd-party dependencies
             IdenticalPropertyNamingStrategy::class => AutoWireFactory::class,
 
-            SerializerInterface::class . ' $combinationApiClientSerializer' => new JmsSerializerFactory(ConfigKey::PROJECT, ConfigKey::SERIALIZER),
+            SerializerInterface::class . ' $combinationApiClientSerializer' => new JmsSerializerFactory(ConfigKey::MAIN, ConfigKey::SERIALIZER),
         ],
     ],
 ];

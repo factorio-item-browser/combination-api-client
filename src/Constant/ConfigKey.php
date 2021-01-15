@@ -12,7 +12,7 @@ namespace FactorioItemBrowser\CombinationApi\Client\Constant;
  */
 interface ConfigKey
 {
-    public const PROJECT = 'combination-api-client';
+    public const MAIN = 'combination-api-client';
     public const BASE_URI = 'base-uri';
     public const ENDPOINTS = 'endpoints';
     public const SERIALIZER = 'serializer';

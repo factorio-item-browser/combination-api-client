@@ -20,7 +20,7 @@ class ClientFactory
 {
     public function __invoke(ContainerInterface $container): ClientInterface
     {
-        $config = $container->get('config')[ConfigKey::PROJECT];
+        $config = $container->get('config')[ConfigKey::MAIN];
 
         $guzzleClient = new GuzzleClient([
             'base_uri' => $config[ConfigKey::BASE_URI],

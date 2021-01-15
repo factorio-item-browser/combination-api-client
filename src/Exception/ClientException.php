@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace FactorioItemBrowser\CombinationApi\Client\Exception;
 
 use Exception;
+use Throwable;
 
 /**
  * The base exception thrown by the client.
@@ -22,7 +23,7 @@ class ClientException extends Exception
         int $code = 0,
         string $request = '',
         string $response = '',
-        ?Exception $previous = null
+        ?Throwable $previous = null
     ) {
         parent::__construct($message, $code, $previous);
 
