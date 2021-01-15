@@ -10,4 +10,4 @@ FactorioItemBrowser\CombinationApi\Client\Response\Combination\StatusResponse:
     isDataAvailable:
       type: boolean
     exportTime:
-      type: DateTimeImmutable<'c'>
+      type: DateTimeInterface<'c'>

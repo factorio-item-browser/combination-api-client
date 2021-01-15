@@ -12,6 +12,6 @@ FactorioItemBrowser\CombinationApi\Client\Transfer\Job:
     errorMessage:
       type: string
     creationTime:
-      type: DateTimeImmutable<'c'>
+      type: DateTimeInterface<'c'>
     changes:
       type: array<FactorioItemBrowser\CombinationApi\Client\Transfer\JobChange>
