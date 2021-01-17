@@ -12,6 +12,7 @@ namespace FactorioItemBrowser\CombinationApi\Client\Constant;
  */
 interface HeaderName
 {
+    public const API_KEY = 'Api-Key';
     public const COMBINATION_ID = 'Combination-Id';
     public const SHORT_COMBINATION_ID = 'Short-Combination-Id';
     public const MOD_NAMES = 'Mod-Names';

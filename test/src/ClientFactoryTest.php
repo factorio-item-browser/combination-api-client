@@ -30,6 +30,7 @@ class ClientFactoryTest extends TestCase
     {
         $config = [
             ConfigKey::MAIN => [
+                ConfigKey::API_KEY => 'abc',
                 ConfigKey::BASE_URI => 'https://www.example.com/',
                 ConfigKey::TIMEOUT => 42,
                 ConfigKey::ENDPOINTS => [
@@ -55,6 +56,9 @@ class ClientFactoryTest extends TestCase
 
         $expectedGuzzleClient = new GuzzleClient([
             'base_uri' => 'https://www.example.com/',
+            'headers' => [
+                'Api-Key' => 'abc',
+            ],
             'timeout' => 42,
         ]);
         $expectedInstance = new Client($expectedGuzzleClient, $serializer, [$endpoint1, $endpoint2]);

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace FactorioItemBrowser\CombinationApi\Client;
 
 use FactorioItemBrowser\CombinationApi\Client\Constant\ConfigKey;
+use FactorioItemBrowser\CombinationApi\Client\Constant\HeaderName;
 use GuzzleHttp\Client as GuzzleClient;
 use GuzzleHttp\RequestOptions;
 use JMS\Serializer\SerializerInterface;
@@ -25,6 +26,9 @@ class ClientFactory
         $guzzleClient = new GuzzleClient([
             'base_uri' => $config[ConfigKey::BASE_URI],
             RequestOptions::TIMEOUT => $config[ConfigKey::TIMEOUT],
+            RequestOptions::HEADERS => array_filter([
+                HeaderName::API_KEY => $config[ConfigKey::API_KEY] ?? '',
+            ]),
         ]);
         $serializer = $container->get(SerializerInterface::class . ' $combinationApiClientSerializer');
         $endpoints = array_map(fn (string $alias) => $container->get($alias), $config[ConfigKey::ENDPOINTS]);
