@@ -9,6 +9,8 @@ FactorioItemBrowser\CombinationApi\Client\Transfer\Job:
       type: string
     priority:
       type: string
+    queuePosition:
+      type: int
     errorMessage:
       type: string
     creationTime:

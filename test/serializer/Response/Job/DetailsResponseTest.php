@@ -34,6 +34,7 @@ class DetailsResponseTest extends SerializerTestCase
         $object->combinationId = 'pqr';
         $object->priority = 'stu';
         $object->status = 'vwx';
+        $object->queuePosition = 42;
         $object->errorMessage = 'yza';
         $object->creationTime = new DateTimeImmutable('2038-01-19 01:14:07+00:00');
         $object->changes = [$change1, $change2];
@@ -43,6 +44,7 @@ class DetailsResponseTest extends SerializerTestCase
             'combinationId' => 'pqr',
             'priority' => 'stu',
             'status' => 'vwx',
+            'queuePosition' => 42,
             'errorMessage' => 'yza',
             'creationTime' => '2038-01-19T01:14:07+00:00',
             'changes' => [

@@ -24,6 +24,7 @@ class ListResponseTest extends SerializerTestCase
         $job1->combinationId = 'def';
         $job1->priority = 'ghi';
         $job1->status = 'jkl';
+        $job1->queuePosition = 42;
         $job1->errorMessage = 'mno';
         $job1->creationTime = new DateTimeImmutable('2038-01-19 03:14:07+00:00');
 
@@ -32,6 +33,7 @@ class ListResponseTest extends SerializerTestCase
         $job2->combinationId = 'stu';
         $job2->priority = 'vwx';
         $job2->status = 'yza';
+        $job2->queuePosition = 21;
         $job2->errorMessage = 'bcd';
         $job2->creationTime = new DateTimeImmutable('2038-01-19 02:14:07+00:00');
 
@@ -45,6 +47,7 @@ class ListResponseTest extends SerializerTestCase
                     'combinationId' => 'def',
                     'priority' => 'ghi',
                     'status' => 'jkl',
+                    'queuePosition' => 42,
                     'errorMessage' => 'mno',
                     'creationTime' => '2038-01-19T03:14:07+00:00',
                     'changes' => [],
@@ -54,6 +57,7 @@ class ListResponseTest extends SerializerTestCase
                     'combinationId' => 'stu',
                     'priority' => 'vwx',
                     'status' => 'yza',
+                    'queuePosition' => 21,
                     'errorMessage' => 'bcd',
                     'creationTime' => '2038-01-19T02:14:07+00:00',
                     'changes' => [],

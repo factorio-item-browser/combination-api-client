@@ -40,6 +40,12 @@ class Job
     public string $status = '';
 
     /**
+     * The current position of the job in the queue.
+     * @var int
+     */
+    public int $queuePosition = 0;
+
+    /**
      * The error message in case the job failed.
      * @var string
      */
