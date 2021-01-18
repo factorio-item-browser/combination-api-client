@@ -13,13 +13,10 @@ use PHPUnit\Framework\TestCase;
  *
  * @author BluePsyduck <bluepsyduck@gmx.com>
  * @license http://opensource.org/licenses/GPL-3.0 GPL v3
- * @coversDefaultClass \FactorioItemBrowser\CombinationApi\Client\ConfigProvider
+ * @covers \FactorioItemBrowser\CombinationApi\Client\ConfigProvider
  */
 class ConfigProviderTest extends TestCase
 {
-    /**
-     * @covers ::__invoke
-     */
     public function testInvoke(): void
     {
         $instance = new ConfigProvider();

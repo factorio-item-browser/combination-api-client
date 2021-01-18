@@ -14,13 +14,10 @@ use PHPUnit\Framework\TestCase;
  *
  * @author BluePsyduck <bluepsyduck@gmx.com>
  * @license http://opensource.org/licenses/GPL-3.0 GPL v3
- * @coversDefaultClass \FactorioItemBrowser\CombinationApi\Client\Endpoint\Combination\StatusEndpoint
+ * @covers \FactorioItemBrowser\CombinationApi\Client\Endpoint\Combination\StatusEndpoint
  */
 class StatusEndpointTest extends TestCase
 {
-    /**
-     * @covers ::<public>
-     */
     public function test(): void
     {
         $request = new StatusRequest();

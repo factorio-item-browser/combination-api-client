@@ -13,13 +13,10 @@ use PHPUnit\Framework\TestCase;
  *
  * @author BluePsyduck <bluepsyduck@gmx.com>
  * @license http://opensource.org/licenses/GPL-3.0 GPL v3
- * @coversDefaultClass \FactorioItemBrowser\CombinationApi\Client\Exception\InvalidResponseException
+ * @covers \FactorioItemBrowser\CombinationApi\Client\Exception\InvalidResponseException
  */
 class InvalidResponseExceptionTest extends TestCase
 {
-    /**
-     * @covers ::__construct
-     */
     public function testConstruct(): void
     {
         $message = 'abc';

@@ -13,13 +13,10 @@ use PHPUnit\Framework\TestCase;
  *
  * @author BluePsyduck <bluepsyduck@gmx.com>
  * @license http://opensource.org/licenses/GPL-3.0 GPL v3
- * @coversDefaultClass \FactorioItemBrowser\CombinationApi\Client\Exception\ClientException
+ * @covers \FactorioItemBrowser\CombinationApi\Client\Exception\ClientException
  */
 class ClientExceptionTest extends TestCase
 {
-    /**
-     * @covers ::<public>
-     */
     public function testConstruct(): void
     {
         $message = 'abc';

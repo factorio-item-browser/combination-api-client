@@ -14,12 +14,11 @@ use PHPUnit\Framework\TestCase;
  *
  * @author BluePsyduck <bluepsyduck@gmx.com>
  * @license http://opensource.org/licenses/GPL-3.0 GPL v3
- * @coversDefaultClass \FactorioItemBrowser\CombinationApi\Client\Endpoint\Combination\AbstractCombinationEndpoint
+ * @covers \FactorioItemBrowser\CombinationApi\Client\Endpoint\Combination\AbstractCombinationEndpoint
  */
 class AbstractCombinationEndpointTest extends TestCase
 {
     /**
-     * Provides the data for the getRequestHeaders test.
      * @return array<mixed>
      */
     public function provideGetRequestHeaders(): array
@@ -50,7 +49,6 @@ class AbstractCombinationEndpointTest extends TestCase
     }
 
     /**
-     * @covers ::getRequestHeaders
      * @dataProvider provideGetRequestHeaders
      * @param AbstractCombinationRequest $request
      * @param array<mixed> $expectedResult

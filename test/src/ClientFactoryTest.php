@@ -18,14 +18,10 @@ use Psr\Container\ContainerInterface;
  *
  * @author BluePsyduck <bluepsyduck@gmx.com>
  * @license http://opensource.org/licenses/GPL-3.0 GPL v3
- *
- * @coversDefaultClass \FactorioItemBrowser\CombinationApi\Client\ClientFactory
+ * @covers \FactorioItemBrowser\CombinationApi\Client\ClientFactory
  */
 class ClientFactoryTest extends TestCase
 {
-    /**
-     * @covers ::<public>
-     */
     public function testInvoke(): void
     {
         $config = [

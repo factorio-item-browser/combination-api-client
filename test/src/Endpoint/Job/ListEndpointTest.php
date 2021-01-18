@@ -14,13 +14,10 @@ use PHPUnit\Framework\TestCase;
  *
  * @author BluePsyduck <bluepsyduck@gmx.com>
  * @license http://opensource.org/licenses/GPL-3.0 GPL v3
- * @coversDefaultClass \FactorioItemBrowser\CombinationApi\Client\Endpoint\Job\ListEndpoint
+ * @covers \FactorioItemBrowser\CombinationApi\Client\Endpoint\Job\ListEndpoint
  */
 class ListEndpointTest extends TestCase
 {
-    /**
-     * @covers ::<public>
-     */
     public function test(): void
     {
         $request = new ListRequest();
@@ -56,7 +53,6 @@ class ListEndpointTest extends TestCase
     /**
      * @param ListRequest $request
      * @param string $expectedPath
-     * @covers ::getRequestPath
      * @dataProvider provideGetRequestPath
      */
     public function testGetRequestPath(ListRequest $request, string $expectedPath): void
