@@ -21,6 +21,7 @@ class ValidateRequestTest extends SerializerTestCase
         $object->combinationId = 'abc';
         $object->shortCombinationId = 'def';
         $object->modNames = ['ghi', 'jkl'];
+        $object->factorioVersion = '1.2.3';
 
         $this->assertSerialization([], $object);
     }

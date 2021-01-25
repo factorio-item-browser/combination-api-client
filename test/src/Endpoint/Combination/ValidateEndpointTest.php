@@ -21,12 +21,13 @@ class ValidateEndpointTest extends TestCase
     public function test(): void
     {
         $request = new ValidateRequest();
+        $request->factorioVersion = '1.2.3';
 
         $instance = new ValidateEndpoint();
 
         $this->assertSame(ValidateRequest::class, $instance->getHandledRequestClass());
         $this->assertSame('POST', $instance->getRequestMethod());
-        $this->assertSame('validate', $instance->getRequestPath($request));
+        $this->assertSame('validate/1.2.3', $instance->getRequestPath($request));
         $this->assertSame(ValidateResponse::class, $instance->getResponseClass());
     }
 }

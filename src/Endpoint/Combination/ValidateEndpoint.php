@@ -27,9 +27,13 @@ class ValidateEndpoint extends AbstractCombinationEndpoint
         return 'POST';
     }
 
+    /**
+     * @param ValidateRequest $request
+     * @return string
+     */
     public function getRequestPath(object $request): string
     {
-        return 'validate';
+        return "validate/{$request->factorioVersion}";
     }
 
     public function getResponseClass(): string

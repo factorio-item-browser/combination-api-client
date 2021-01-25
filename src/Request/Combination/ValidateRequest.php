@@ -12,4 +12,5 @@ namespace FactorioItemBrowser\CombinationApi\Client\Request\Combination;
  */
 class ValidateRequest extends AbstractCombinationRequest
 {
+    public string $factorioVersion = '1.0.0';
 }
