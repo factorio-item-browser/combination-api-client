@@ -1,0 +1,13 @@
+FactorioItemBrowser\CombinationApi\Client\Transfer\Combination:
+  exclusion_policy: all
+  properties:
+    id:
+      type: string
+    shortId:
+      type: string
+    modNames:
+      type: array<string>
+    isDataAvailable:
+      type: boolean
+    exportTime:
+      type: DateTimeInterface<'c'>
