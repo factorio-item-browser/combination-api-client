@@ -6,4 +6,4 @@ FactorioItemBrowser\CombinationApi\Client\Transfer\JobChange:
     status:
       type: string
     timestamp:
-      type: DateTimeInterface<'c'>
+      type: DateTimeInterface<'Y-m-d\TH:i:sP'>

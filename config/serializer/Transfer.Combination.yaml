@@ -10,4 +10,4 @@ FactorioItemBrowser\CombinationApi\Client\Transfer\Combination:
     isDataAvailable:
       type: boolean
     exportTime:
-      type: DateTimeInterface<'c'>
+      type: DateTimeInterface<'Y-m-d\TH:i:sP'>

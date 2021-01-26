@@ -62,5 +62,6 @@ class JobTest extends SerializerTestCase
         ];
 
         $this->assertSerialization($data, $object);
+        $this->assertDeserialization($object, $data);
     }
 }
