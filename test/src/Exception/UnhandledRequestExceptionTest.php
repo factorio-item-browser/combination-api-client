@@ -21,7 +21,7 @@ class UnhandledRequestExceptionTest extends TestCase
     {
         $requestClass = 'abc';
         $previous = $this->createMock(Exception::class);
-        $expectedMessage = 'The request abc is handled by any endpoint.';
+        $expectedMessage = 'The request abc is not handled by any endpoint.';
 
         $exception = new UnhandledRequestException($requestClass, $previous);
 

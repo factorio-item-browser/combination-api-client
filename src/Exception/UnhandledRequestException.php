@@ -14,7 +14,7 @@ use Throwable;
  */
 class UnhandledRequestException extends ClientException
 {
-    private const MESSAGE = 'The request %s is handled by any endpoint.';
+    private const MESSAGE = 'The request %s is not handled by any endpoint.';
 
     public function __construct(string $requestClass, ?Throwable $previous = null)
     {
