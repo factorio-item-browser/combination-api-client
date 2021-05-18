@@ -16,6 +16,7 @@ use FactorioItemBrowser\CombinationApi\Client\Response\EmptyResponse;
 use GuzzleHttp\ClientInterface as GuzzleClientInterface;
 use GuzzleHttp\Exception\ConnectException;
 use GuzzleHttp\Exception\RequestException;
+use GuzzleHttp\Exception\TransferException;
 use GuzzleHttp\Promise\PromiseInterface;
 use GuzzleHttp\Psr7\Request;
 use JMS\Serializer\SerializerInterface;
@@ -66,7 +67,7 @@ class Client implements ClientInterface
             function (ResponseInterface $clientResponse) use ($endpoint, $clientRequest) {
                 return $this->handleClientResponse($endpoint, $clientRequest, $clientResponse);
             },
-            function (RequestException $e): void {
+            function (TransferException $e): void {
                 $this->handleException($e);
             },
         );
@@ -130,10 +131,10 @@ class Client implements ClientInterface
 
     /**
      * Handles the exception throws by the client, transforming it into a ClientException.
-     * @param RequestException $exception
+     * @param TransferException $exception
      * @throws ClientException
      */
-    private function handleException(RequestException $exception): void
+    private function handleException(TransferException $exception): void
     {
         if ($exception instanceof ConnectException) {
             throw new ConnectionException(
@@ -143,36 +144,38 @@ class Client implements ClientInterface
             );
         }
 
-        $response = $exception->getResponse();
-        if ($response === null) {
-            throw new ErrorResponseException(
-                $exception->getMessage(),
-                0,
-                $exception->getRequest()->getBody()->getContents(),
-                '',
-                $exception,
-            );
+        $requestContent = '';
+        $responseContent = '';
+        $exceptionMessage = $exception->getMessage();
+        if ($exception instanceof RequestException) {
+            $requestContent = $exception->getRequest()->getBody()->getContents();
+
+            $response = $exception->getResponse();
+            if ($response !== null) {
+                $responseContent = $response->getBody()->getContents();
+                $exceptionMessage = $this->extractErrorMessage($responseContent, $exception);
+            }
         }
 
         throw new ErrorResponseException(
-            $this->extractErrorMessage($response, $exception),
-            $response->getStatusCode(),
-            $exception->getRequest()->getBody()->getContents(),
-            $response->getBody()->getContents(),
+            $exceptionMessage,
+            $exception->getCode(),
+            $requestContent,
+            $responseContent,
             $exception,
         );
     }
 
     /**
      * Tries to extract the error message from the response, and falls back to the exception message otherwise.
-     * @param ResponseInterface $response
+     * @param string $responseContent
      * @param Exception $exception
      * @return string
      */
-    private function extractErrorMessage(ResponseInterface $response, Exception $exception): string
+    private function extractErrorMessage(string $responseContent, Exception $exception): string
     {
         try {
-            $data = json_decode($response->getBody()->getContents(), true, 512, JSON_THROW_ON_ERROR);
+            $data = json_decode($responseContent, true, 512, JSON_THROW_ON_ERROR);
             return $data['error']['message'] ?? $exception->getMessage();
         } catch (Exception $e) {
             return $exception->getMessage();
