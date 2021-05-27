@@ -40,6 +40,7 @@ class ListEndpoint implements EndpointInterface
             ParameterName::STATUS => $request->status,
             ParameterName::ORDER => $request->order,
             ParameterName::LIMIT => $request->limit,
+            ParameterName::FIRST => $request->first,
         ]))), '?');
     }
 

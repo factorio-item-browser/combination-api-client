@@ -16,4 +16,5 @@ interface ParameterName
     public const STATUS = 'status';
     public const ORDER = 'order';
     public const LIMIT = 'limit';
+    public const FIRST = 'first';
 }

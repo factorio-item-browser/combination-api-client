@@ -41,11 +41,12 @@ class ListEndpointTest extends TestCase
         $request1->status = 'def';
         $request1->order = 'ghi';
         $request1->limit = 42;
+        $request1->first = 21;
 
         $request2 = new ListRequest();
 
         return [
-            [$request1, 'jobs?combinationId=abc&status=def&order=ghi&limit=42'],
+            [$request1, 'jobs?combinationId=abc&status=def&order=ghi&limit=42&first=21'],
             [$request2, 'jobs'],
         ];
     }

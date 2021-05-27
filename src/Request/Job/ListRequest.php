@@ -35,4 +35,10 @@ class ListRequest
      * @var int
      */
     public int $limit = 0;
+
+    /**
+     * The first job to return.
+     * @var int
+     */
+    public int $first = 0;
 }
