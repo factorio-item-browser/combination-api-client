@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace FactorioItemBrowser\CombinationApi\Client\Transfer;
 
 use DateTimeInterface;
+use JMS\Serializer\Annotation\Type;
 
 /**
  * The class representing a combination.
@@ -16,13 +17,11 @@ class Combination
 {
     /**
      * The ID of the combination.
-     * @var string
      */
     public string $id = '';
 
     /**
      * The short ID of the combination.
-     * @var string
      */
     public string $shortId = '';
 
@@ -30,17 +29,17 @@ class Combination
      * The names of the mods building the combination.
      * @var array<string>
      */
+    #[Type('array<string>')]
     public array $modNames = [];
 
     /**
      * Whether the data of this combination is available in the Data API.
-     * @var bool
      */
     public bool $isDataAvailable = false;
 
     /**
      * The time when the combination was last exported.
-     * @var DateTimeInterface|null
      */
+    #[Type('DateTimeInterface<"Y-m-d\TH:i:sP">')]
     public ?DateTimeInterface $exportTime = null;
 }

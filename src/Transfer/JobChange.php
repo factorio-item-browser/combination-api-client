@@ -6,6 +6,7 @@ namespace FactorioItemBrowser\CombinationApi\Client\Transfer;
 
 use DateTimeImmutable;
 use DateTimeInterface;
+use JMS\Serializer\Annotation\Type;
 
 /**
  * The class representing a change of a job.
@@ -17,19 +18,17 @@ class JobChange
 {
     /**
      * The initiator of the change.
-     * @var string
      */
     public string $initiator = '';
 
     /**
      * The timestamp of when the change happened.
-     * @var DateTimeInterface
      */
+    #[Type('DateTimeInterface<"Y-m-d\TH:i:sP">')]
     public DateTimeInterface $timestamp;
 
     /**
      * The new status of the job.
-     * @var string
      */
     public string $status = '';
 

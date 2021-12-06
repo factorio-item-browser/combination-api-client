@@ -24,10 +24,7 @@ class SerializerTestCase extends TestCase
         parent::setUp();
 
         $builder = new SerializerBuilder();
-        $builder->setMetadataDirs([
-                    'FactorioItemBrowser\CombinationApi\Client' => __DIR__ . '/../../config/serializer',
-                ])
-                ->setPropertyNamingStrategy(new IdenticalPropertyNamingStrategy());
+        $builder->setPropertyNamingStrategy(new IdenticalPropertyNamingStrategy());
 
         $this->serializer = $builder->build();
     }

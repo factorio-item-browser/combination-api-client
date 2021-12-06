@@ -20,6 +20,11 @@ class DetailsRequestTest extends SerializerTestCase
         $object = new DetailsRequest();
         $object->id = 'abc';
 
-        $this->assertSerialization([], $object);
+        $data = [];
+
+        $expectedObject = new DetailsRequest();
+
+        $this->assertSerialization($data, $object);
+        $this->assertDeserialization($expectedObject, $data);
     }
 }

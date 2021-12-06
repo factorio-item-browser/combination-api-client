@@ -1,9 +1,0 @@
-FactorioItemBrowser\CombinationApi\Client\Transfer\ValidatedMod:
-  exclusion_policy: all
-  properties:
-    name:
-      type: string
-    version:
-      type: string
-    problems:
-      type: array<FactorioItemBrowser\CombinationApi\Client\Transfer\ValidationProblem>

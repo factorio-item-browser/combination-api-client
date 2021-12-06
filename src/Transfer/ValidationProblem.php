@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace FactorioItemBrowser\CombinationApi\Client\Transfer;
 
+use JMS\Serializer\Annotation\Type;
+
 /**
  * The class representing a problem encountered during validation.
  *
@@ -14,13 +16,11 @@ class ValidationProblem
 {
     /**
      * The type of the problem encountered during validation.
-     * @var string
      */
     public string $type = '';
 
     /**
      * The dependency which lead to the problem, if any.
-     * @var string
      */
     public string $dependency = '';
 }

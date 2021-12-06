@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace FactorioItemBrowser\CombinationApi\Client\Request\Combination;
 
+use JMS\Serializer\Annotation\Exclude;
+
 /**
  * The abstract layer of the combination-referencing requests.
  *
@@ -14,19 +16,20 @@ abstract class AbstractCombinationRequest
 {
     /**
      * The ID of the combination.
-     * @var string
      */
+    #[Exclude]
     public string $combinationId = '';
 
     /**
      * The short ID of the combination.
-     * @var string
      */
+    #[Exclude]
     public string $shortCombinationId = '';
 
     /**
      * The names of the mods building the combination.
      * @var array<string>
      */
+    #[Exclude]
     public array $modNames = [];
 }
