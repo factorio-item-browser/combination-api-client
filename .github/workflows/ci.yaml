@@ -9,11 +9,7 @@ jobs:
   call-workflow-ci-php-general:
     name: General
     uses: factorio-item-browser/github-workflows/.github/workflows/ci-php-general.yaml@v1
-    with:
-      php-version: "8.1"
 
   call-workflow-ci-php-tests:
     name: Tests
     uses: factorio-item-browser/github-workflows/.github/workflows/ci-php-tests.yaml@v1
-    with:
-      min-php-version: "8.1"
