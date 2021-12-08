@@ -1,9 +1,9 @@
 parameters:
-  level: 8
+  level: max
   paths:
     - src
     - test/serializer
-    - test/src
+#    - test/src
   ignoreErrors:
     - '#Dynamic call to static method PHPUnit\\Framework\\.*#'
 

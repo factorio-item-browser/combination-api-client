@@ -15,14 +15,13 @@ namespace FactorioItemBrowser\CombinationApi\Client;
 use BluePsyduck\JmsSerializerFactory\JmsSerializerFactory;
 use BluePsyduck\LaminasAutoWireFactory\AutoWireFactory;
 use FactorioItemBrowser\CombinationApi\Client\Constant\ConfigKey;
+use FactorioItemBrowser\CombinationApi\Client\Constant\ServiceName;
 use JMS\Serializer\Naming\IdenticalPropertyNamingStrategy;
 use JMS\Serializer\SerializerInterface;
 
 return [
     'dependencies' => [
         'factories' => [
-            ClientInterface::class => ClientFactory::class,
-
             Endpoint\Combination\StatusEndpoint::class => AutoWireFactory::class,
             Endpoint\Combination\ValidateEndpoint::class => AutoWireFactory::class,
             Endpoint\Job\CreateEndpoint::class => AutoWireFactory::class,
@@ -30,10 +29,11 @@ return [
             Endpoint\Job\ListEndpoint::class => AutoWireFactory::class,
             Endpoint\Job\UpdateEndpoint::class => AutoWireFactory::class,
 
+            ServiceName::GUZZLE_CLIENT => GuzzleClientFactory::class,
+            ServiceName::SERIALIZER => new JmsSerializerFactory(ConfigKey::MAIN, ConfigKey::SERIALIZER),
+
             // 3rd-party dependencies
             IdenticalPropertyNamingStrategy::class => AutoWireFactory::class,
-
-            SerializerInterface::class . ' $combinationApiClientSerializer' => new JmsSerializerFactory(ConfigKey::MAIN, ConfigKey::SERIALIZER),
         ],
     ],
 ];
