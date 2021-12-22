@@ -20,8 +20,11 @@ use JMS\Serializer\Naming\IdenticalPropertyNamingStrategy;
 
 return [
     'dependencies' => [
+        'aliases' => [
+            ClientInterface::class => Client::class,
+        ],
         'factories' => [
-            ClientInterface::class => AutoWireFactory::class,
+            Client::class => AutoWireFactory::class,
 
             Endpoint\Combination\StatusEndpoint::class => AutoWireFactory::class,
             Endpoint\Combination\ValidateEndpoint::class => AutoWireFactory::class,
