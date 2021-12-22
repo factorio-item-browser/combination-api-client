@@ -36,7 +36,7 @@ use Psr\Http\Message\ResponseInterface;
 class Client implements ClientInterface
 {
     /** @var array<string, EndpointInterface<object, object>> */
-    private readonly array $endpoints;
+    private array $endpoints;
 
     /**
      * @param GuzzleClientInterface $guzzleClient

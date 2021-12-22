@@ -9,13 +9,13 @@ use FactorioItemBrowser\CombinationApi\Client\Endpoint\RequestHeadersProviderInt
 use FactorioItemBrowser\CombinationApi\Client\Response\EmptyResponse;
 
 /**
- * A endpoint implementation for testing.
+ * An endpoint implementation for testing.
  *
  * @author BluePsyduck <bluepsyduck@gmx.com>
  * @license http://opensource.org/licenses/GPL-3.0 GPL v3
  *
  * @implements EndpointInterface<TestRequest, TestResponse|EmptyResponse>
- * @implements HeadersProviderInterface<TestRequest>
+ * @implements RequestHeadersProviderInterface<TestRequest>
  */
 class TestEndpoint implements EndpointInterface, RequestHeadersProviderInterface
 {
