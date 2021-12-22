@@ -17,11 +17,12 @@ use BluePsyduck\LaminasAutoWireFactory\AutoWireFactory;
 use FactorioItemBrowser\CombinationApi\Client\Constant\ConfigKey;
 use FactorioItemBrowser\CombinationApi\Client\Constant\ServiceName;
 use JMS\Serializer\Naming\IdenticalPropertyNamingStrategy;
-use JMS\Serializer\SerializerInterface;
 
 return [
     'dependencies' => [
         'factories' => [
+            ClientInterface::class => AutoWireFactory::class,
+
             Endpoint\Combination\StatusEndpoint::class => AutoWireFactory::class,
             Endpoint\Combination\ValidateEndpoint::class => AutoWireFactory::class,
             Endpoint\Job\CreateEndpoint::class => AutoWireFactory::class,
