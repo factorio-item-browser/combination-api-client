@@ -23,6 +23,11 @@ class ListRequestTest extends SerializerTestCase
         $object->order = 'ghi';
         $object->limit = 42;
 
-        $this->assertSerialization([], $object);
+        $data = [];
+
+        $expectedObject = new ListRequest();
+
+        $this->assertSerialization($data, $object);
+        $this->assertDeserialization($expectedObject, $data);
     }
 }

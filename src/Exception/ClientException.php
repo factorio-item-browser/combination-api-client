@@ -33,7 +33,6 @@ class ClientException extends Exception
 
     /**
      * Returns the request which was tried to be executed.
-     * @return string
      */
     public function getRequest(): string
     {
@@ -42,7 +41,6 @@ class ClientException extends Exception
 
     /**
      * Returns the response which has been received.
-     * @return string
      */
     public function getResponse(): string
     {

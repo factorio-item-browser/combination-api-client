@@ -23,6 +23,11 @@ class ValidateRequestTest extends SerializerTestCase
         $object->modNames = ['ghi', 'jkl'];
         $object->factorioVersion = '1.2.3';
 
-        $this->assertSerialization([], $object);
+        $data = [];
+
+        $expectedObject = new ValidateRequest();
+
+        $this->assertSerialization($data, $object);
+        $this->assertDeserialization($expectedObject, $data);
     }
 }

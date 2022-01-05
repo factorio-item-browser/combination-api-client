@@ -1,7 +1,0 @@
-FactorioItemBrowser\CombinationApi\Client\Request\Job\UpdateRequest:
-  exclusion_policy: all
-  properties:
-    status:
-      type: string
-    errorMessage:
-      type: string

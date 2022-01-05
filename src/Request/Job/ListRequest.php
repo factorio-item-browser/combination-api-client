@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace FactorioItemBrowser\CombinationApi\Client\Request\Job;
 
+use JMS\Serializer\Annotation\Exclude;
+
 /**
  * The request for returning a list of export jobs.
  *
@@ -14,31 +16,31 @@ class ListRequest
 {
     /**
      * The id of the combination to return the jobs from.
-     * @var string
      */
+    #[Exclude]
     public string $combinationId = '';
 
     /**
      * The status of the jobs to return.
-     * @var string
      */
+    #[Exclude]
     public string $status = '';
 
     /**
      * The order in which to return the jobs.
-     * @var string
      */
+    #[Exclude]
     public string $order = '';
 
     /**
      * The maximal number of jobs to return.
-     * @var int
      */
+    #[Exclude]
     public int $limit = 0;
 
     /**
      * The first job to return.
-     * @var int
      */
+    #[Exclude]
     public int $first = 0;
 }

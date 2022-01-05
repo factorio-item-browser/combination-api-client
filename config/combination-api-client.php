@@ -27,9 +27,6 @@ return [
             Endpoint\Job\UpdateEndpoint::class,
         ],
         ConfigKey::SERIALIZER => [
-            JmsConfigKey::METADATA_DIRS => [
-                __NAMESPACE__ => 'vendor/factorio-item-browser/combination-api-client/config/serializer',
-            ],
             JmsConfigKey::PROPERTY_NAMING_STRATEGY => IdenticalPropertyNamingStrategy::class,
         ],
     ],

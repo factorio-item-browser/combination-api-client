@@ -4,10 +4,13 @@ declare(strict_types=1);
 
 namespace FactorioItemBrowserTestSerializer\CombinationApi\Client;
 
+use BluePsyduck\JmsSerializerFactory\JmsSerializerFactory;
+use FactorioItemBrowser\CombinationApi\Client\Constant\ConfigKey;
+use Interop\Container\ContainerInterface;
 use JMS\Serializer\Naming\IdenticalPropertyNamingStrategy;
-use JMS\Serializer\SerializerBuilder;
 use JMS\Serializer\SerializerInterface;
 use PHPUnit\Framework\TestCase;
+use Psr\Container\ContainerExceptionInterface;
 
 /**
  * The test case for the serializer tests.
@@ -19,22 +22,27 @@ class SerializerTestCase extends TestCase
 {
     private SerializerInterface $serializer;
 
+    /**
+     * @throws ContainerExceptionInterface
+     */
     protected function setUp(): void
     {
-        parent::setUp();
+        $config = require(__DIR__ . '/../../config/combination-api-client.php');
 
-        $builder = new SerializerBuilder();
-        $builder->setMetadataDirs([
-                    'FactorioItemBrowser\CombinationApi\Client' => __DIR__ . '/../../config/serializer',
-                ])
-                ->setPropertyNamingStrategy(new IdenticalPropertyNamingStrategy());
+        $container = $this->createMock(ContainerInterface::class);
+        $container->expects($this->any())
+                  ->method('get')
+                  ->willReturnMap([
+                      ['config', $config],
+                      [IdenticalPropertyNamingStrategy::class, new IdenticalPropertyNamingStrategy()],
+                  ]);
 
-        $this->serializer = $builder->build();
+        $serializerFactory = new JmsSerializerFactory(ConfigKey::MAIN, ConfigKey::SERIALIZER);
+        $this->serializer = $serializerFactory($container, SerializerInterface::class); // @phpstan-ignore-line
     }
 
     /**
      * @param array<mixed> $expectedData
-     * @param object $object
      */
     public function assertSerialization(array $expectedData, object $object): void
     {
@@ -43,7 +51,6 @@ class SerializerTestCase extends TestCase
     }
 
     /**
-     * @param object $expectedObject
      * @param array<mixed> $data
      */
     public function assertDeserialization(object $expectedObject, array $data): void

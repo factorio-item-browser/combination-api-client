@@ -8,6 +8,7 @@ use DateTimeImmutable;
 use FactorioItemBrowser\CombinationApi\Client\Response\Job\DetailsResponse;
 use FactorioItemBrowser\CombinationApi\Client\Transfer\JobChange;
 use FactorioItemBrowserTestSerializer\CombinationApi\Client\SerializerTestCase;
+use JMS\Serializer\Annotation\Type;
 
 /**
  * The serializer test of the DetailsResponse class.
@@ -62,5 +63,6 @@ class DetailsResponseTest extends SerializerTestCase
         ];
 
         $this->assertSerialization($data, $object);
+        $this->assertDeserialization($object, $data);
     }
 }

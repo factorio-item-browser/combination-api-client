@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace FactorioItemBrowser\CombinationApi\Client\Transfer;
 
+use JMS\Serializer\Annotation\Type;
+
 /**
  * The class representing a validated mod.
  *
@@ -14,13 +16,11 @@ class ValidatedMod
 {
     /**
      * The name of the mod.
-     * @var string
      */
     public string $name = '';
 
     /**
      * The version of the mod used for validation.
-     * @var string
      */
     public string $version = '';
 
@@ -28,5 +28,6 @@ class ValidatedMod
      * The problems encountered with the mod.
      * @var array<ValidationProblem>
      */
+    #[Type('array<' . ValidationProblem::class . '>')]
     public array $problems = [];
 }

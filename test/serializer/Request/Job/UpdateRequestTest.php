@@ -27,6 +27,11 @@ class UpdateRequestTest extends SerializerTestCase
             'errorMessage' => 'ghi',
         ];
 
+        $expectedObject = new UpdateRequest();
+        $expectedObject->status = 'def';
+        $expectedObject->errorMessage = 'ghi';
+
         $this->assertSerialization($data, $object);
+        $this->assertDeserialization($expectedObject, $data);
     }
 }

@@ -22,6 +22,11 @@ class StatusRequestTest extends SerializerTestCase
         $object->shortCombinationId = 'def';
         $object->modNames = ['ghi', 'jkl'];
 
-        $this->assertSerialization([], $object);
+        $data = [];
+
+        $expectedObject = new StatusRequest();
+
+        $this->assertSerialization($data, $object);
+        $this->assertDeserialization($expectedObject, $data);
     }
 }

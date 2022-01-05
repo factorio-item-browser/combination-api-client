@@ -6,6 +6,10 @@ namespace FactorioItemBrowser\CombinationApi\Client\Transfer;
 
 use DateTimeImmutable;
 use DateTimeInterface;
+use JMS\Serializer\Annotation\Exclude;
+use JMS\Serializer\Annotation\ExclusionPolicy;
+use JMS\Serializer\Annotation\Expose;
+use JMS\Serializer\Annotation\Type;
 
 /**
  * The class representing an export job.
@@ -17,50 +21,45 @@ class Job
 {
     /**
      * The id of the job.
-     * @var string
      */
     public string $id = '';
 
     /**
      * The id of the combination assigned to the job.
-     * @var string
      */
     public string $combinationId = '';
 
     /**
      * The priority of the export job.
-     * @var string
      */
     public string $priority = '';
 
     /**
      * The current status of the job.
-     * @var string
      */
     public string $status = '';
 
     /**
      * The current position of the job in the queue.
-     * @var int
      */
     public int $queuePosition = 0;
 
     /**
      * The error message in case the job failed.
-     * @var string
      */
     public string $errorMessage = '';
 
     /**
      * The creation time of the export job.
-     * @var DateTimeInterface
      */
+    #[Type('DateTimeInterface<"Y-m-d\TH:i:sP">')]
     public DateTimeInterface $creationTime;
 
     /**
      * The changes of the job.
      * @var array<JobChange>
      */
+    #[Type('array<' . JobChange::class . '>')]
     public array $changes = [];
 
     public function __construct()
